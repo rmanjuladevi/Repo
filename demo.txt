@@ -1,3 +1,77 @@
 The demo will be created
 
 The again stash will be created
+
+F:\demo\Repo>git stash
+Saved working directory and index state WIP on new: 365e91f new file will be added
+
+F:\demo\Repo>git stash pop
+On branch new
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   demo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (81ef00ad8e6143d0136876435e2e9b91b771f9d6)
+
+F:\demo\Repo>git stash list
+stash@{0}: On new: the stash message added
+stash@{1}: WIP on new: 365e91f new file will be added
+stash@{2}: WIP on new: 365e91f new file will be added
+
+F:\demo\Repo>git stash
+Saved working directory and index state WIP on new: 365e91f new file will be added
+
+F:\demo\Repo>git stash list
+stash@{0}: WIP on new: 365e91f new file will be added
+stash@{1}: On new: the stash message added
+stash@{2}: WIP on new: 365e91f new file will be added
+stash@{3}: WIP on new: 365e91f new file will be added
+
+F:\demo\Repo>git stash pop stash@{1}
+On branch new
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   demo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped stash@{1} (3c9ae038b1e4e5c5540a974722f9b99dd74040c4)
+
+F:\demo\Repo>git add .
+
+F:\demo\Repo>git commit "stash concept explained"
+error: pathspec 'stash concept explained' did not match any file(s) known to git
+
+F:\demo\Repo>git commit -m "stash concept explained"
+[new c0d4093] stash concept explained
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+F:\demo\Repo>git branch
+  main
+* new
+
+F:\demo\Repo>git push
+fatal: The current branch new has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin new
+
+
+F:\demo\Repo>git push --set-upstream origin new
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 328 bytes | 11.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'new' on GitHub by visiting:
+remote:      https://github.com/rmanjuladevi/Repo/pull/new/new
+remote:
+To https://github.com/rmanjuladevi/Repo.git
+ * [new branch]      new -> new
+Branch 'new' set up to track remote branch 'new' from 'origin'.
+
+F:\demo\Repo>
