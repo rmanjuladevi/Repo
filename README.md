@@ -1,1 +1,1 @@
-# The New Project will be created.
+# Git Tutorial Class
