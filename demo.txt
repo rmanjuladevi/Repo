@@ -1,6 +1,6 @@
 The demo will be created
 
-Basic command for stash
+The file name will be demo
 
 F:\demo\Repo>git stash
 Saved working directory and index state WIP on new: 365e91f new file will be added
